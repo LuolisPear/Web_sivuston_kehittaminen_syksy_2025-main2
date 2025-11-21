@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WS05_RD — Responsive Design</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="responsive-nav" aria-label="Primary">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">☰ Menu</button>
+      <ul id="primary-nav" class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="examples">
+      <h2>Task 1 — Responsive Layout</h2>
+      <div class="responsive-container">
+        <div class="column">Column 1: content goes here</div>
+        <div class="column">Column 2: content goes here</div>
+      </div>
+
+      <h2>Task 2 — Responsive Image</h2>
+      <img src="./Francis.jpg" alt="Responsive Image" class="responsive-image">
+
+      <h2>Task 3 — Media Query Box</h2>
+      <div class="media-query-box">Resize the window to see the effect</div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Example contact area.</p>
+    </section>
+  </main>
+
+  <script>
+    // small menu toggle for mobile
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.responsive-nav');
+      const list = document.querySelector('.nav-list');
+      if(!btn) return;
+      btn.addEventListener('click', () => {
+        const opened = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+        // ensure nav-list visible on toggle (CSS also handles layout)
+        if(opened) list.style.display = 'flex'; else list.style.display = '';
+      });
+      // ensure keyboard focus shows menu
+      btn.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') btn.click(); });
+    })();
+  </script>
+</body>
+</html>
