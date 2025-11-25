@@ -134,12 +134,12 @@ input[type="submit"]:hover {
 
 /* Header / nav styling */
 nav {
-  background: linear-gradient(90deg, #1f618d, #2c3e50);
+  background: linear-gradient(90deg,#1f618d,#2c3e50);
   color: #fff;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 nav ul {
   list-style: none;
@@ -150,72 +150,20 @@ nav ul {
   align-items: center;
   justify-content: center;
 }
-
-nav li a {
+nav li { margin: 0; }
+nav a {
   color: #fff;
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 6px;
   font-weight: 600;
-  transition: background-color 0.18s ease, color 0.18s ease,
-    transform 0.12s ease;
+  transition: background-color .18s ease, color .18s ease, transform .12s ease;
 }
 nav a:hover,
 nav a:focus {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
   transform: translateY(-2px);
   outline: none;
-}
-
-/* Responsive navigation styles */
-.responsive-nav {
-  /* optional container styling */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-/* Desktop / large screens: show list, hide toggle button */
-.responsive-nav .nav-list {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-.responsive-nav .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-/* Mobile: hide list, show toggle. When nav has .open show the list */
-@media (max-width: 600px) {
-  .responsive-nav {
-    flex-wrap: nowrap;
-  }
-
-  .responsive-nav .nav-list {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0.5rem 0;
-    background: transparent;
-    width: 100%;
-  }
-
-  .responsive-nav .menu-toggle {
-    display: block;
-  }
-
-  .responsive-nav.open .nav-list {
-    display: flex;
-  }
 }
 
 /* Flex container and box styling */
@@ -229,11 +177,11 @@ nav a:focus {
   margin: 12px 0;
 }
 .box {
-  background: linear-gradient(180deg, #ffffff, #f2f6f8);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg,#ffffff,#f2f6f8);
+  border: 1px solid rgba(0,0,0,0.06);
   padding: 18px;
   border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(28, 40, 50, 0.03);
+  box-shadow: 0 6px 18px rgba(28,40,50,0.03);
   min-width: 160px;
   flex: 1 1 180px;
   text-align: center;
@@ -289,157 +237,97 @@ nav a:focus {
   }
 }
 .filter-image {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.filter-image:hover {
-  filter: grayscale(0%);
-}
-.quote {
-  position: relative;
-  padding-left: 20px;
-  font-style: italic;
-}
-
-.quote::before {
-  content: "“";
-  font-size: 40px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: lightgray;
-}
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+      
+      .filter-image:hover {
+        filter: grayscale(0%);
+      }
+      .quote {
+        position: relative;
+        padding-left: 20px;
+        font-style: italic;
+      }
+      
+      .quote::before {
+        content: '“';
+        font-size: 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: lightgray;
+      }
 /* --- Added animation effects (for flex/grid containers and items) --- */
 
 /* Container sway (subtle horizontal movement) */
 @keyframes sway {
-  0% {
-    transform: translateX(-6px) rotate(-0.5deg);
-  }
-  50% {
-    transform: translateX(6px) rotate(0.5deg);
-  }
-  100% {
-    transform: translateX(-6px) rotate(-0.5deg);
-  }
+  0% { transform: translateX(-6px) rotate(-0.5deg); }
+  50% { transform: translateX(6px) rotate(0.5deg); }
+  100% { transform: translateX(-6px) rotate(-0.5deg); }
 }
 
 /* Box pulse (scale breathing) */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.06);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
 }
 
 /* Gentle tilt rotation */
 @keyframes tilt {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(4deg);
-  }
-  75% {
-    transform: rotate(-4deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(4deg); }
+  75% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
 }
 
 /* Continuous hue shifting (color cycling) */
 @keyframes hue {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 
 /* Bounce (vertical) */
 @keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  70% {
-    transform: translateY(-4px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  70% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
 }
 
 /* Fast spin */
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* Subtle float (slow vertical motion) */
 @keyframes floaty {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
 /* Scale pop (occasional pop) */
 @keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
 /* Skew wobble */
 @keyframes skew {
-  0% {
-    transform: skewX(0deg);
-  }
-  50% {
-    transform: skewX(8deg);
-  }
-  100% {
-    transform: skewX(0deg);
-  }
+  0% { transform: skewX(0deg); }
+  50% { transform: skewX(3deg); }
+  100% { transform: skewX(0deg); }
 }
 
 /* Glow pulse (box-shadow) */
 @keyframes glow {
-  0% {
-    box-shadow: 0 0 0 rgba(31, 97, 141, 0);
-  }
-  50% {
-    box-shadow: 0 8px 24px rgba(31, 97, 141, 0.12);
-  }
-  100% {
-    box-shadow: 0 0 0 rgba(31, 97, 141, 0);
-  }
+  0% { box-shadow: 0 0 0 rgba(31,97,141,0); }
+  50% { box-shadow: 0 8px 24px rgba(31,97,141,0.12); }
+  100% { box-shadow: 0 0 0 rgba(31,97,141,0); }
 }
 
 /* Make effects inactive by default; start on :hover or :focus */
@@ -479,7 +367,7 @@ nav a:focus {
 }
 .effect-bounce:hover,
 .effect-bounce:focus {
-  animation: bounce 1.2s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+  animation: bounce 1.2s cubic-bezier(.28,.84,.42,1) infinite;
 }
 .effect-spin:hover,
 .effect-spin:focus {
@@ -503,16 +391,9 @@ nav a:focus {
 }
 
 /* Optional hover intensifiers remain usable */
-.effect-pulse:hover {
-  animation-duration: 1.1s;
-}
-.effect-bounce:hover {
-  animation-duration: 0.9s;
-  transform-origin: center;
-}
-.effect-glow:hover {
-  animation-duration: 1.6s;
-}
+.effect-pulse:hover { animation-duration: 1.1s; }
+.effect-bounce:hover { animation-duration: 0.9s; transform-origin: center; }
+.effect-glow:hover { animation-duration: 1.6s; }
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -529,7 +410,19 @@ nav a:focus {
     animation: none !important;
   }
 }
-.responsive-image {
-      max-width: 50%;
-      height: auto;
+.responsive-box {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  @media (max-width: 600px) {
+    .responsive-box {
+      background-color: lightcoral;
     }
+  }
+  
+  @media (min-width: 601px) {
+    .responsive-box {
+      background-color: lightseagreen;
+    }
+  }
