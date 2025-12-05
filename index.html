@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <!-- Task 3: Responsive Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNavbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -36,7 +36,6 @@
     </nav>
 
     <div class="container my-5">
-      <!-- Task 5: Bootstrap Alerts (Multiple Styles) -->
       <div class="row mb-4">
         <div class="col-12">
           <div id="alert-success" class="alert alert-success d-none" role="alert">
@@ -69,7 +68,7 @@
         </div>
       </div>
 
-      <!-- Task 1: Bootstrap Grid Layout -->
+      
       <div class="row mb-5">
         <div class="col-md-4 col-12 mb-3">
           <div class="p-4 bg-primary text-white rounded shadow-sm">
@@ -97,7 +96,7 @@
         </div>
       </div>
 
-      <!-- Task 2: Bootstrap Buttons (Multiple Styles) -->
+      
       <div class="row mb-5">
         <div class="col-12">
           <div class="d-flex flex-wrap gap-2">
@@ -106,11 +105,11 @@
         </div>
       </div>
 
-      <!-- Task 4: Bootstrap Cards -->
+      
       <div class="row mb-5">
         <div class="col-md-4 col-12 mb-4">
           <div class="card shadow-sm" style="width: 100%;">
-            <img src="../marlboro-cigarette.gif" class="card-img-top" alt="Marlboro Cigarette" style="height: 200px; object-fit: cover;">
+            <img src="marlboro-cigarette.gif" class="card-img-top" alt="Marlboro Cigarette" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title">röösni</h5>
               <a href="#" class="btn btn-primary" id="marlboroBtn">Learn More</a>
@@ -120,8 +119,7 @@
         <div class="col-md-4 col-12 mb-4">
           <div class="card shadow-sm" style="width: 100%;">
             <video class="card-img-top" controls style="height: 200px; width: 100%; object-fit: cover;">
-              <source src="../Sibs_ Maista uudet maut.mp4" type="video/mp4">
-              Your browser does not support the video tag.
+              <source src="Sibs_ Maista uudet maut.mp4" type="video/mp4">
             </video>
             <div class="card-body">
               <h5 class="card-title">sibs</h5>
@@ -131,7 +129,7 @@
         </div>
         <div class="col-md-4 col-12 mb-4">
           <div class="card shadow-sm" style="width: 100%;">
-            <img src="../Francis.jpg" class="card-img-top" alt="Card Image" style="height: 200px; object-fit: cover;">
+            <img src="Francis.jpg" class="card-img-top" alt="Card Image" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title">Francis</h5>
               <a href="#" class="btn btn-info" id="francisBtn">Learn More</a>
@@ -143,31 +141,26 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Hide all alerts initially and show corresponding alert when button is clicked
+
       document.addEventListener('DOMContentLoaded', function() {
-        // Get all buttons with data-alert attribute
         const alertButtons = document.querySelectorAll('[data-alert]');
         
         alertButtons.forEach(button => {
           button.addEventListener('click', function() {
-            // Hide all alerts first
             document.querySelectorAll('.alert').forEach(alert => {
               alert.classList.add('d-none');
             });
             
-            // Show the corresponding alert
             const alertId = this.getAttribute('data-alert');
             const alertElement = document.getElementById(alertId);
             if (alertElement) {
               alertElement.classList.remove('d-none');
               
-              // Scroll to alert
               alertElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
           });
         });
-
-        // Light mode toggle
+        
         const navbar = document.getElementById('mainNavbar');
         document.getElementById('lightModeBtn').addEventListener('click', function() {
           document.documentElement.setAttribute('data-bs-theme', 'light');
@@ -176,7 +169,6 @@
           navbar.classList.add('navbar-light', 'bg-light');
         });
 
-        // Dark mode toggle
         document.getElementById('darkModeBtn').addEventListener('click', function() {
           document.documentElement.setAttribute('data-bs-theme', 'dark');
           document.body.setAttribute('data-bs-theme', 'dark');
@@ -184,36 +176,29 @@
           navbar.classList.add('navbar-dark', 'bg-dark');
         });
 
-        // Card button handlers
         document.getElementById('marlboroBtn').addEventListener('click', function(e) {
           e.preventDefault();
-          // Hide all alerts first
           document.querySelectorAll('.alert').forEach(alert => {
             alert.classList.add('d-none');
           });
-          // Show marlboro alert
           document.getElementById('alert-marlboro').classList.remove('d-none');
           document.getElementById('alert-marlboro').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
 
         document.getElementById('sibsBtn').addEventListener('click', function(e) {
           e.preventDefault();
-          // Hide all alerts first
           document.querySelectorAll('.alert').forEach(alert => {
             alert.classList.add('d-none');
           });
-          // Show sibs alert
           document.getElementById('alert-sibs').classList.remove('d-none');
           document.getElementById('alert-sibs').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
 
         document.getElementById('francisBtn').addEventListener('click', function(e) {
           e.preventDefault();
-          // Hide all alerts first
           document.querySelectorAll('.alert').forEach(alert => {
             alert.classList.add('d-none');
           });
-          // Show francis alert
           document.getElementById('alert-francis').classList.remove('d-none');
           document.getElementById('alert-francis').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
