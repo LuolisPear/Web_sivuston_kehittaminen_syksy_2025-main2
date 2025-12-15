@@ -51,48 +51,6 @@
             </li>
           </ul>
           <div class="ms-auto d-flex align-items-center gap-2">
-            <!-- Music Player (Navbar - Mobile) -->
-            <div id="navbarMusicPlayer" class="d-none">
-              <button class="btn btn-sm btn-outline-light" id="navbarPlayerToggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPlayerCollapse" aria-expanded="false" aria-controls="navbarPlayerCollapse">
-                🎵
-              </button>
-              <div class="collapse position-absolute end-0 mt-2" id="navbarPlayerCollapse" style="z-index: 1050; width: 300px; max-width: 90vw;">
-                <div class="card shadow-lg">
-                  <div class="card-header p-2 d-flex justify-content-between align-items-center">
-                    <small class="fw-bold">Music Player</small>
-                    <button class="btn btn-sm btn-outline-secondary" id="navbarTogglePlayer" type="button">
-                      <span id="navbarToggleIcon">−</span>
-                    </button>
-                  </div>
-                  <div id="navbarPlayerContent">
-                    <div class="card-body p-2">
-                      <div class="text-center mb-2">
-                        <img id="navbarAlbumArt" src="" alt="Album Art" style="width: 120px; height: 120px; object-fit: cover; border-radius: 4px;">
-                      </div>
-                      <div class="d-flex align-items-center gap-2 mb-2">
-                        <button class="btn btn-sm btn-outline-primary" id="navbarPrevBtn" type="button">⏮</button>
-                        <button class="btn btn-sm btn-primary" id="navbarPlayPauseBtn" type="button">⏸</button>
-                        <button class="btn btn-sm btn-outline-primary" id="navbarNextBtn" type="button">⏭</button>
-                      </div>
-                      <div class="d-flex align-items-center gap-2 mb-2">
-                        <button class="btn btn-sm btn-outline-secondary" id="navbarMuteBtn" type="button">🔊</button>
-                        <input type="range" class="form-range" id="navbarVolumeSlider" min="0" max="100" value="20" style="flex: 1;">
-                        <small id="navbarVolumeDisplay" class="text-muted" style="min-width: 35px;">20%</small>
-                      </div>
-                      <div class="mb-2">
-                        <small class="text-muted d-block fw-bold" id="navbarNowPlaying" style="font-size: 0.8em;">Loading...</small>
-                        <small class="text-muted d-block" id="navbarTrackInfo" style="font-size: 0.7em;"></small>
-                      </div>
-                      <div class="border-top pt-2 mt-2">
-                        <small class="fw-bold d-block mb-2">Playlist</small>
-                        <div id="navbarPlaylist" style="max-height: 150px; overflow-y: auto; font-size: 0.75em;">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <label for="styleSelect" class="me-2" style="color: inherit;">Style:</label>
             <select id="styleSelect" class="form-select form-select-sm" style="width: auto;">
               <option value="tomorrow">Tomorrow</option>
@@ -133,7 +91,7 @@
     </div>
 
     <!-- Ruffle Player Modal -->
-    <div class="modal fade" id="ruffleModal" tabindex="-1" aria-labelledby="ruffleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ruffleModal" tabindex="-1" role="dialog" aria-labelledby="ruffleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
